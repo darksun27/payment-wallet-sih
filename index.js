@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended : true}));
-mongoose.connect('mongodb://localhost:27017/payment-wallet', {useNewUrlParser : true});
+mongoose.connect('mongodb+srv://sbsiddharth:sidrulzbatra1234@cluster0-vvlal.mongodb.net/test?retryWrites=true&w=majority', { keepAlive : true });
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
