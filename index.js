@@ -154,7 +154,7 @@ app.post("/api/add-amount", async (req, res)=> {
             amount_final = details[0]['amount'];
         }
     });
-    amount_final += + parseInt(req.body.amount, 10);
+    amount_final += parseInt(req.body.amount, 10);
     console.log(amount_final)
     await Wallet.findOneAndUpdate(wallet_id, {amount : amount_final}, (err, details)=>{
         if(err) {
