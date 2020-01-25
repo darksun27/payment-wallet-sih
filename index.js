@@ -119,8 +119,10 @@ app.post("/api/spend", async (req, res)=> {
             else {
                 console.log("Transaction Successfull!");
                 flag = 1;
+                console.log(flag);
             }
         });
+        console.log("hello 1", flag);
         if(flag == 1) {
             console.log("Hello")
             let history = {
