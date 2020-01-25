@@ -112,16 +112,23 @@ app.post("/api/spend", async (req, res)=> {
         console.log(typeof(parseInt(req.body.amount),10));
         wallet_amount -= parseInt(req.body.amount, 10);
         console.log(wallet_amount, wallet_id);
-        await Wallet.findOneAndUpdate(wallet_id, {amount : wallet_amount}, (err, details)=> {
-            if(err) {
+       
+
+        try{
+            await Wallet.findOneAndUpdate(wallet_id, {amount : wallet_amount})
+            console.log("Transaction Successfull!");
+            flag = 1;
+            console.log(flag);
+        }catch(err){
+            
                 console.log(err, "Error in transaction!");
-            }
-            else {
-                console.log("Transaction Successfull!");
-                flag = 1;
-                console.log(flag);
-            }
-        });
+            
+           
+                
+            
+        }
+            
+        
         console.log("hello 1", flag);
         if(flag == 1) {
             console.log("Hello")
