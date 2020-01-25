@@ -63,7 +63,7 @@ app.post("/api/new-entry", (req, res)=>{
     })
 })
 
-app.get("/api/get-history", async (req, res)=> {
+app.post("/api/get-history", async (req, res)=> {
     await UserHistory.find({mobile_number : req.body.mobile_number}, (err, details)=> {
         if(err) {
             console.log("Error Creating History");
@@ -85,6 +85,7 @@ app.post("/api/get-wallet-details", async (req, res)=> {
             console.log("Wallet details fetched!", details);
             res.send({ wallet : details[0]['amount'] });
         }
+        console.log(req.body)
     })
 })
 
