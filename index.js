@@ -122,6 +122,7 @@ app.post("/api/spend", async (req, res)=> {
             }
         });
         if(flag == 1) {
+            console.log("Hello")
             let history = {
                 mobile_number : req.body.mobile_number,
                 amount : req.body.amount,
